@@ -1,0 +1,19 @@
+{
+  "name": "c",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Desafío2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisfdelalma/EntregasBackEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luisfdelalma/EntregasBackEnd/issues"
+  },
+  "homepage": "https://github.com/luisfdelalma/EntregasBackEnd#readme"
+}
