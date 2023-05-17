@@ -21,14 +21,26 @@ class ProductManager {
                 else {id = this.products[this.products.length-1].id+1}
 
                 let product = {id, title,description,price,thumbnail,code,stock}
+
+                this.products.push(product)
+                return "El producto ha sido agregado"
         }
+    }
+
+    getProducts (){
+        
     }
 }
 
-const producto1=new ProductManager("./textoEjemplo.json")
+const producto1=new ProductManager()
 producto1.addProduct(
 {id:"ejemplo",
 title:"ejemplo",
-description:"ejemplo"
+description:"ejemplo",
+price: 5,
+thumbnail: "N/A",
+code: 234,
+stock: 345
 }
 )
+console.log(producto1.products);
