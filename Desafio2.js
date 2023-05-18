@@ -51,12 +51,21 @@ class ProductManager {
         }
     }
 
-    // getProductsById(id){
-    //     let proIndex = this.products.findIndex((product)=> product.id===id)
-    //     if (proIndex===-1) { return "No se encontró ningún producto con el id ingresado"
-    //         } else { return this.products[proIndex]
-    //     }
-    // }
+    async getProductsById(id){
+        if (fs.existsSync(this.path)) {
+            let Jproducts = await fs.promises.readFile(this.path,'utf-8')
+            let products = JSON.parse(Jproducts)
+
+            let find = products.findIndex((prod)=> prod.id===id)
+            if (find === -1) {
+                console.log("No se encontró ningún producto con el id ingresado");
+            } else {
+                console.log(products[find])
+            }
+        } else {
+            console.log("No se ha encontrado productos en la ruta seleccionada");
+        }
+    }
 
     // updateProduct (){
 
@@ -65,4 +74,5 @@ class ProductManager {
 
 const producto1 = new ProductManager('./Productos.json')
 // producto1.addProduct('titulo de ejemplo1', 'descripcion de ejemplo1', 98765421, 'sin imagen de ejemplo1', 567231, 6781)
-producto1.getProducts()
+// producto1.getProducts()
+producto1.getProductsById(1)
